@@ -1,0 +1,62 @@
+#!/usr/bin/perl
+
+use strict;
+use Cwd qw(getcwd abs_path);
+use File::Basename;
+use File::Path qw(remove_tree mkpath);
+use File::Copy;
+
+my $script_dir = dirname(abs_path($0));
+chdir;
+my $cur_dir = getcwd;
+my $symlink_exists = eval { symlink('',''); 1 };
+
+# first thing to do is create the .profile file
+my $profile = 
+'# if running bash
+if [ -n "$BASH_VERSION" ]; then
+  # include .bashrc if it exists
+  if [ -f "$HOME/projects/profile/.bashrc" ]; then
+    . "$HOME/projects/profile/.bashrc"
+  elif [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+  fi
+fi';
+move('.profile','.profile_old');
+open PROFILE, '>.profile' or die $!;
+print PROFILE $profile;
+close PROFILE;
+
+# setup the vim environment
+chdir;
+unlink('.vimrc');
+remove_tree('.vim');
+
+my $vim_path = File::Spec->catdir($script_dir,'vim/.vim');
+my $vimrc_path = File::Spec->catdir($script_dir,'vim/.vimrc');
+my $googleDrivePath = File::Spec->catdir($cur_dir,'Google Drive');
+
+if($symlink_exists) {
+  symlink($vim_path,'.vim');
+  symlink($vimrc_path,'.vimrc');
+
+  # setup the Google Drive symlink without the space
+  symlink($googleDrivePath,'GoogleDrive');
+}
+else {
+  `cp -R $vim_path .vim`;
+  copy($vimrc_path,'.vimrc');
+}
+
+# Copy iTerm settings
+my $itermPath = 'Library/Preferences';
+my $itermProfile = File::Spec->catdir($script_dir,'iterm','com.googlecode.iterm2.plist');
+my $itermLink = 'com.googlecode.iterm2.plist';
+if(not -d $itermPath) {
+  mkpath($itermPath);
+}
+chdir($itermPath);
+unlink($itermLink);
+symlink($itermProfile,$itermLink);
+
+chdir; # idempotent - return to home directory even though we do not need to

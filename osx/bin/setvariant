@@ -1,0 +1,15 @@
+#!/usr/bin/env groovy
+
+import java.text.*
+
+def usage() {
+  println("Usage: setvariant [VARIANT]\n  Acceptable value
+}
+
+if(this.args.length!=1) {
+  usage();
+}
+
+for(a in this.args) {
+  println("Argument: " + a);
+}

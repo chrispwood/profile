@@ -1,0 +1,1 @@
+mvn -f ~/projects/latch/latch-f/web/pom.xml install
