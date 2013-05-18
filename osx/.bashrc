@@ -138,7 +138,7 @@ export EDITOR=vi
 # Environment variables
 ########################################################
 export PROJECTS=~/projects
-export PROFILE=$PROJECTS/profile
+export PROFILE=$PROJECTS/profile/osx
 
 # setup java
 #export JRE_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
