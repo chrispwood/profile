@@ -17,7 +17,7 @@ my $profile =
 if [ -n "$BASH_VERSION" ]; then
   # include .bashrc if it exists
   if [ -f "$HOME/projects/profile/.bashrc" ]; then
-    . "$HOME/projects/profile/.bashrc"
+    . "$HOME/projects/profile/osx/.bashrc"
   elif [ -f "$HOME/.bashrc" ]; then
     . "$HOME/.bashrc"
   fi
@@ -27,6 +27,8 @@ open PROFILE, '>.profile' or die $!;
 print PROFILE $profile;
 close PROFILE;
 
+# create the bashrc symlink
+
 # setup the vim environment
 chdir;
 unlink('.vimrc');
@@ -35,6 +37,7 @@ remove_tree('.vim');
 my $vim_path = File::Spec->catdir($script_dir,'vim/.vim');
 my $vimrc_path = File::Spec->catdir($script_dir,'vim/.vimrc');
 my $googleDrivePath = File::Spec->catdir($cur_dir,'Google Drive');
+my $bashPath = File::Spec->catdir($script_dir,'.bashrc');
 
 if($symlink_exists) {
   symlink($vim_path,'.vim');
@@ -42,6 +45,9 @@ if($symlink_exists) {
 
   # setup the Google Drive symlink without the space
   symlink($googleDrivePath,'GoogleDrive');
+
+  # setup the bashrc symlink
+  symlink($bashPath,'.bashrc');
 }
 else {
   `cp -R $vim_path .vim`;
