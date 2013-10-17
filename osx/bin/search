@@ -1,0 +1,2 @@
+BASEDIR=$(dirname $0)
+java -classpath "$BASEDIR/lucene.jar" Searcher $1 $2

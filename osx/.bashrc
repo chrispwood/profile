@@ -159,11 +159,18 @@ export GIT=/usr/local/git
 # groovy
 export GROOVY_HOME=/usr/groovy-1.8.6
 
+# gradle
+export GRADLE_HOME=/usr/local/Cellar/gradle/1.5
+
 # grails
 export GRAILS_HOME=/usr/local/grails
+
+# hadoop
+export HADOOP=/opt/hadoop/
+export HADOOP_OPTS="-Djava.security.krb5.realm= -Djava.security.krb5.kdc="
 
 ########################################################
 # PATH
 ########################################################
-export PATH=$GRAILS_HOME/bin:$GIT/bin:/usr/local/bin:$PATH:$PROFILE/bin:$GROOVY_HOME/bin
+export PATH=$GRAILS_HOME/bin:$GIT/bin:/usr/local/bin:$PATH:$PROFILE/bin:$GROOVY_HOME/bin:$GRADLE_HOME/bin:$HADOOP/bin
 
