@@ -115,6 +115,7 @@ alias ll='ls -l'
 alias la='ls -Al'
 alias l='ls -CF'
 alias vi='vim'
+alias sha1='shasum'
 # tomcat
 alias web='cd /Library/WebServer/Documents'
 alias httpd='sudo vi /etc/apache2/httpd.conf'
