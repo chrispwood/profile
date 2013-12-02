@@ -59,3 +59,5 @@ autocmd BufRead *.mxml set filetype=mxml
 syntax on
 
 map ,e :e ./
+
+colorscheme github
