@@ -111,16 +111,37 @@ fi
 ########################################################
 # alias
 ########################################################
+# shell
 alias ll='ls -l'
 alias la='ls -Al'
 alias l='ls -CF'
 alias vi='vim'
 alias sha1='shasum'
+alias ..='cd ..'
 # tomcat
 alias web='cd /Library/WebServer/Documents'
 alias httpd='sudo vi /etc/apache2/httpd.conf'
-
-alias ..='cd ..'
+# git
+alias gb="git branch"
+alias gc="git checkout"
+alias gs="git status"
+alias gsb="git show-branch"
+alias cm="git commit"
+alias push="git push"
+alias pull="git pull"
+alias prune="git fetch origin --prune"
+alias add="git add"
+alias merge="git merge"
+# vagrant
+alias v='vagrant'
+alias vd="vagrant destroy"
+alias vh="vagrant halt"
+alias vss="vagrant ssh"
+alias vst="vagrant status"
+alias vsu="vagrant suspend"
+alias vup="vagrant up"
+# postgres
+alias pg="psql postgres"
 
 # enable programmable completion features (you don't need to enable
 # thi, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -151,8 +172,10 @@ export M2_HOME=/usr/share/maven
 export M2_OPTS=-Xmx1024m
 export MAVEN_OPTS="-Xmx1024m -Xms512m -XX:PermSize=256m -XX:MaxPermSize=512m"
 
-# ruby
+# ruby, jruby, rubinius
 export RUBYLIB=.
+export JRUBY_HOME=/opt/jruby
+export RUBINIUS_HOME=/opt/rubinius
 
 # git
 export GIT=/usr/local/git
@@ -176,8 +199,19 @@ export HBASE_HOME=/opt/hbase
 # zookeeper
 export ZOOKEEPER_HOME=/opt/zookeeper
 
+# sonar
+export SONAR_QUBE=/opt/sonarqube/sonarqube
+export SONAR_RUNNER=/opt/sonarqube/sonar-runner
+
+# go
+export GOPATH=~/.go
+
 ########################################################
 # PATH
 ########################################################
-export PATH=$GRAILS_HOME/bin:$GIT/bin:/usr/local/bin:$PATH:$PROFILE/bin:$GROOVY_HOME/bin:$GRADLE_HOME/bin:$HADOOP/bin:$HBASE_HOME/bin:$ZOOKEEPER_HOME/bin
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export PATH=$GRAILS_HOME/bin:$GIT/bin:/usr/local/bin:$PATH:$PROFILE/bin:\
+$GROOVY_HOME/bin:$GRADLE_HOME/bin:$HADOOP/bin:$HBASE_HOME/bin:$ZOOKEEPER_HOME/bin:\
+$JRUBY_HOME/bin:$RUBINIUS_HOME/bin:$SONAR_QUBE/bin:$SONAR_RUNNER/bin
 

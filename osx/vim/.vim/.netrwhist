@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/cwood/projects/twitter/syria'
-let g:netrw_dirhist_2='/Users/cwood/bin'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/cwood/.rvm/gems/ruby-2.1.0-preview2@telemetry-services/bundler/gems/telemetry-dao-fab8858ff67c/lib/telemetry_dao'
+let g:netrw_dirhist_2='/Users/cwood/.rvm/gems/ruby-2.1.0-preview2@telemetry-services/bundler/gems/telemetry-dao-fab8858ff67c/lib'
+let g:netrw_dirhist_3='/Users/cwood/.rvm/gems/ruby-2.1.0-preview2@telemetry-services/bundler/gems/telemetry-dao-fab8858ff67c/lib/telemetry_dao'
+let g:netrw_dirhist_4='/Users/cwood/.rvm/gems/ruby-2.1.0-preview2@telemetry-services/bundler/gems/telemetry-dao-fab8858ff67c/lib'
+let g:netrw_dirhist_5='/Users/cwood/.rvm/gems/ruby-2.1.0-preview2@telemetry-services/bundler/gems/telemetry-dao-fab8858ff67c/lib/telemetry_dao'
