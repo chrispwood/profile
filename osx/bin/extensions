@@ -1,0 +1,16 @@
+#!/usr/bin/ruby
+
+require 'rubygems'
+
+native_gems = []
+Gem::Specification.each do |spec|
+  native_gems << "#{spec.name}:#{spec.version}" unless spec.extensions.empty?
+end
+
+puts native_gems.join("\n")
+
+#install_cmd = "gem install #{native_gems.join ' '}"
+#puts "Found #{native_gems.length} gem(s) with native extensions:"
+#puts "\n> " + install_cmd, "\nReinstall gems with above command? (yn)"
+
+#exec insall_cmd if gets.downcase[0] == 'y'
