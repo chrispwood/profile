@@ -124,14 +124,15 @@ alias httpd='sudo vi /etc/apache2/httpd.conf'
 # git
 alias gb="git branch"
 alias gc="git checkout"
-alias gs="git status"
+alias status="git status"
 alias gsb="git show-branch"
-alias cm="git commit"
+alias commit="git commit"
 alias push="git push"
 alias pull="git pull"
 alias prune="git fetch origin --prune"
 alias add="git add"
 alias merge="git merge"
+alias show="git show"
 # vagrant
 alias v='vagrant'
 alias vd="vagrant destroy"
