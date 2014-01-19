@@ -214,5 +214,5 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export PATH=$GRAILS_HOME/bin:$GIT/bin:/usr/local/bin:$PATH:$PROFILE/bin:\
 $GROOVY_HOME/bin:$GRADLE_HOME/bin:$HADOOP/bin:$HBASE_HOME/bin:$ZOOKEEPER_HOME/bin:\
-$JRUBY_HOME/bin:$RUBINIUS_HOME/bin:$SONAR_QUBE/bin:$SONAR_RUNNER/bin
+$JRUBY_HOME/bin:$RUBINIUS_HOME/bin:$SONAR_QUBE/bin:$SONAR_RUNNER/bin:$PROFILE/apple_scripts
 

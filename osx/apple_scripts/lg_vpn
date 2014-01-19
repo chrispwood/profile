@@ -1,0 +1,2 @@
+#!/bin/sh
+automator $(dirname $0)/lg_vpn_connection.workflow
