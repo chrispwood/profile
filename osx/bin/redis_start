@@ -1,0 +1,3 @@
+redis-server &
+sleep(1)
+echo ''
