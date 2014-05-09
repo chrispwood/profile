@@ -61,3 +61,5 @@ syntax on
 map ,e :e ./
 
 colorscheme github
+
+set backspace=indent,eol,start

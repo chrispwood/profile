@@ -1,0 +1,1 @@
+ssh -l ubuntu -i ~/Downloads/test.pem ec2-54-87-39-177.compute-1.amazonaws.com
