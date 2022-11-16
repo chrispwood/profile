@@ -38,6 +38,10 @@ my $vim_path = File::Spec->catdir($script_dir,'vim/.vim');
 my $vimrc_path = File::Spec->catdir($script_dir,'vim/.vimrc');
 my $googleDrivePath = File::Spec->catdir($cur_dir,'Google Drive');
 my $bashPath = File::Spec->catdir($script_dir,'.bashrc');
+my $zshPath = File::Spec->catdir($script_dir,'.zshrc');
+
+print "Setting up zsh\n";
+`sh -c "\$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`;
 
 if($symlink_exists) {
   symlink($vim_path,'.vim');
@@ -48,6 +52,8 @@ if($symlink_exists) {
 
   # setup the bashrc symlink
   symlink($bashPath,'.bashrc');
+  `rm .zshrc`;
+  symlink($zshPath,'.zshrc');
 }
 else {
   `cp -R $vim_path .vim`;
